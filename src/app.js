@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import gestionRoutes from './routes/gestion.routes'
 import adminRoutes from './routes/admin.routes'
 import passport from 'passport';
+import path from 'path';
 import('./lib/passport');
 const app = express();
 //Settings
