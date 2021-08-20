@@ -22,7 +22,7 @@ app.use(passport.session());
 app.use('/gestion/api/v1',gestionRoutes);
 app.use('/admin/api/v1',adminRoutes);
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
