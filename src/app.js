@@ -15,7 +15,7 @@ app.use(cors());
 app.use(morgan('tiny'))
 app.use(passport.initialize()); //Indicamos a passport que se inicie
 app.use(passport.session());
-
+app.use(express.static(path.join(__dirname, "../build")));
 
 
 //Rutas
