@@ -47,11 +47,11 @@ export const consultaReservasDisponibles = async (fec_reserva) => {
 export const consultaReservas = async () => {
   try {
     const reservas = await pool.query(`
-    SELECT RESERVAS.cod_cli as cod_cli, cod_reserva, fec_reserva, concat(nom_cli," ", ape_cli) as cliente,
+    SELECT reservas.cod_cli as cod_cli, cod_reserva, fec_reserva, concat(nom_cli," ", ape_cli) as cliente,
     nom_cli, ape_cli, rut_cli, telefono , email
-    FROM RESERVAS
+    FROM reservas
     JOIN CLIENTES
-    ON CLIENTES.COD_CLI = RESERVAS.COD_CLI
+    ON CLIENTES.COD_CLI = reservas.COD_CLI
     `);
     return { data: reservas };
   } catch (e) {
