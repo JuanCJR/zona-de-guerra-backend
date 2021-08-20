@@ -15,9 +15,7 @@ app.use(morgan('tiny'))
 app.use(passport.initialize()); //Indicamos a passport que se inicie
 app.use(passport.session());
 
-app.get("/", (req, res) => {
-    res.json({ message: "ok" });
-  });
+
 
 //Rutas
 app.use('/gestion/api/v1',gestionRoutes);
