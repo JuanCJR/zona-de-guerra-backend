@@ -1,0 +1,59 @@
+@api_host = http://localhost:8081
+### GET Reservas
+GET {{api_host}}/gestion/api/v1/reserva
+
+
+### GET Reservas por fecha
+GET {{api_host}}/gestion/api/v1/reserva/disponibilidad?fec_reserva=2021/07/26
+
+### GET Reserva
+GET  {{api_host}}/gestion/api/v1/reserva/1
+
+
+### POST Reserva
+POST  {{api_host}}/gestion/api/v1/reserva
+Content-Type: application/json
+
+{
+    "reserva":
+        {
+            "nom_cli":"Juan",
+            "ape_cli":"Jimenez",
+            "rut_cli":"2599329981",
+            "telefono":"+56992756109",
+            "email":"juancarlo14071@gmail.com",
+            "fec_reserva":"2021/07/26 16:00"
+
+        }
+    }
+
+### PUT Reserva
+PUT {{api_host}}/gestion/api/v1/reserva
+Content-Type: application/json
+
+{
+    "reserva":
+        {   "cod_reserva":1,
+            "nom_cli":"Jose",
+            "ape_cli":"Jimenez",
+            "rut_cli":"2599329981",
+            "telefono":"+56992756109",
+            "email":"juancarlo14071@gmail.com",
+            "fec_reserva":"2021/07/26 16:00"
+        }
+    }
+
+### DELETE Reserva
+DELETE {{api_host}}/gestion/api/v1/reserva
+Content-Type: application/json
+x-access-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI5MTMxMDE0LCJleHAiOjE2MzAwMzEwMTR9.Cv8S3R8v7wfjzcyLVw5QGDjZm2ZjdxZ8DCa-lrvLwuQ"
+
+{
+    "reserva":
+        {   
+            "cod_reserva":2
+        }
+}
+
+### GET FERIADOS
+GET https://apis.digital.gob.cl/fl/feriados/2021/07

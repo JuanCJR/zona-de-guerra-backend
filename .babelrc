@@ -1,0 +1,13 @@
+//Especifica que Preset utilizara babel, que va a traducir Babel
+
+{
+    "presets": [
+        "@babel/preset-env"
+    ],
+    "plugins": [
+        ["@babel/plugin-proposal-decorators",{ "legacy": true }],
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-runtime"
+      ]
+
+} 

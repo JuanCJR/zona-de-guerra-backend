@@ -1,0 +1,74 @@
+@api_host = http://localhost:8081
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI5MjEzMzE3LCJleHAiOjE2MzAxMTMzMTd9.9zsCt46bQHTsoDkhWBubklSQJFDJAEkERs_WUDnQzgE
+
+
+### GET Usuario - consulta usuarios
+GET {{api_host}}/admin/api/v1/usuario
+x-access-token: {{token}}
+
+
+### POST Usuario - Crea usuario
+POST {{api_host}}/admin/api/v1/usuario
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "usuario":{
+        "nom_usu":"jcjimenez",
+        "passwd":"1407",
+        "email":"juancarlo14071@gmail.com"
+    }
+}
+
+### PUT Usuario - Actualiza usuario
+PUT {{api_host}}/admin/api/v1/usuario
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "usuario":{
+        "cod_usu":5,
+        "nom_usu":"jjimenez",
+        "email":"juancarlo14071@gmail.com"
+    }
+}
+
+### DELETE Usuario - elimina usuario
+DELETE {{api_host}}/admin/api/v1/usuario
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "usuario":{
+        "cod_usu":6
+    }
+}
+
+
+### POST Usuario - inicia sesion usuario
+POST {{api_host}}/admin/api/v1/usuario/login
+Content-Type: application/json
+
+{
+    "nom_usu":"jcjimenez",
+    "passwd":"1234"
+}
+
+
+
+### GET Usuario - valida login
+GET {{api_host}}/admin/api/v1/usuario/login/valida-sesion
+x-access-token: {{token}}
+
+
+### PUT Usuario - Actualiza contraseña
+PUT {{api_host}}/admin/api/v1/usuario/change-passwd
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "usuario":{
+        "cod_usu":7,
+        "passwd":"1234"
+    }
+}
