@@ -69,9 +69,9 @@ export const consultaReserva = async (cod_reserva) => {
   try {
     const reserva = await pool.query(
       `
-        SELECT * FROM RESERVAS
+        SELECT * FROM reservas
         JOIN CLIENTES
-        ON CLIENTES.COD_CLI = RESERVAS.COD_CLI
+        ON CLIENTES.COD_CLI = reservas.COD_CLI
         where COD_RESERVA = ?
         `,
       [cod_reserva]
