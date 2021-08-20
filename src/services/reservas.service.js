@@ -50,8 +50,8 @@ export const consultaReservas = async () => {
     SELECT reservas.cod_cli as cod_cli, cod_reserva, fec_reserva, concat(nom_cli," ", ape_cli) as cliente,
     nom_cli, ape_cli, rut_cli, telefono , email
     FROM reservas
-    JOIN CLIENTES
-    ON CLIENTES.COD_CLI = reservas.COD_CLI
+    JOIN clientes
+    ON clientes.COD_CLI = reservas.COD_CLI
     `);
     return { data: reservas };
   } catch (e) {
@@ -70,8 +70,8 @@ export const consultaReserva = async (cod_reserva) => {
     const reserva = await pool.query(
       `
         SELECT * FROM reservas
-        JOIN CLIENTES
-        ON CLIENTES.COD_CLI = reservas.COD_CLI
+        JOIN clientes
+        ON clientes.COD_CLI = reservas.COD_CLI
         where COD_RESERVA = ?
         `,
       [cod_reserva]
