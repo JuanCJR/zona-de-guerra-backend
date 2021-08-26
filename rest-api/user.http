@@ -1,5 +1,5 @@
 @api_host = http://localhost:8081
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjI5MjEzMzE3LCJleHAiOjE2MzAxMTMzMTd9.9zsCt46bQHTsoDkhWBubklSQJFDJAEkERs_WUDnQzgE
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjI5ODI0ODUwLCJleHAiOjE2MzA3MjQ4NTB9.RnTKfCUOWAQr4tkdlMF-kRkuirpTkEJQn1YethuBK0A
 
 
 ### GET Usuario - consulta usuarios
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
     "usuario":{
-        "nom_usu":"jcjimenez",
+        "nom_usu":"jcjimenez5",
         "passwd":"1407",
         "email":"juancarlo14071@gmail.com"
     }
@@ -51,7 +51,7 @@ Content-Type: application/json
 
 {
     "nom_usu":"jcjimenez",
-    "passwd":"1234"
+    "passwd":"1407"
 }
 
 
