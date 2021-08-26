@@ -15,12 +15,11 @@ const router = Router();
 
 //Rutas de usuarios - CRUD
 router.get("/usuario", verifyToken, getUsuarios, getResponse); //obtiene usuarios
-router.post("/usuario", verifyToken, postUsuario, getResponse); //crea usuario
+router.post("/usuario", postUsuario, getResponse); //crea usuario
 router.put("/usuario", verifyToken, putUsuario, getResponse); //actualiza usuario
 router.delete("/usuario", verifyToken, deleteUsuario, getResponse); //elimina usuario
 
 //Rutas de usuario - Login
-
 
 router.get("/usuario/login/valida-sesion", verifyToken, getValidLogin, getResponse); //Ruta para validar token
 
