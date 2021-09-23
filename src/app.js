@@ -5,6 +5,7 @@ import gestionRoutes from './routes/gestion.routes'
 import adminRoutes from './routes/admin.routes'
 import passport from 'passport';
 import path from 'path';
+import fileUpload from 'express-fileupload';
 import('./lib/passport');
 const app = express();
 //Settings
@@ -16,7 +17,8 @@ app.use(morgan('tiny'))
 app.use(passport.initialize()); //Indicamos a passport que se inicie
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, "../build")));
-
+app.use(fileUpload());
+app.use(express.urlencoded());
 
 //Rutas
 app.use('/gestion/api/v1',gestionRoutes);

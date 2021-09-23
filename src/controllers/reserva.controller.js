@@ -24,7 +24,8 @@ export const getReserva = async (req, res, next) => {
 
 //Funcion para crear reserva
 export const postReserva = async (req, res, next) => {
-  const { reserva } = req.body;
+  const reserva = req.body;
+  const { comprobante } = req.files;
   const data = await creaReserva(reserva);
   req.result = data;
   next();
